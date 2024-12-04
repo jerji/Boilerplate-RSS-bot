@@ -42,12 +42,13 @@ The simplest deployment method is using [Docker](https://docs.docker.com/engine/
 
 These variables can be individually defined in Docker, or loaded as an `.env` file in the `/app` directory.
 
-| Name | Type | Default | Description
-| ---- | ---- | ------- | -----------
-| TOKEN | **Required** | ` ` | Bot Token for Webex Messaging Posts
-| FEED_ROOM_ID | **Required** | ` ` | RoomId for Webex Announcement Space
-| RSS_FEED_URL | **Required** | ` ` | Rss Feed URL to get the feeds 
-| RSS_INTERVAL | Optional | `5` | Interval for RSS Checks (Seconds)
+| Name         | Type         | Default | Description                         |
+| ------------ | ------------ | ------- | ----------------------------------- |
+| TOKEN        | **Required** | ` `     | Bot Token for Webex Messaging Posts |
+| FEED_ROOM_ID | **Required** | ` `     | RoomId for Webex Announcement Space |
+| RSS_FEED_URL | **Required** | ` `     | Rss Feed URL to get the feeds       |
+| RSS_INTERVAL | Optional     | `5`     | Interval for RSS Checks (Seconds)   |
+
 | **Logging Settings**
 | CONSOLE_LEVEL | no | bool | `info` | Logging level exposed to console
 | APP_NAME | no | string | `rss-service` | App Name used for logging service
