@@ -1,0 +1,19 @@
+version: '3'
+
+services:
+  rss-service:
+    image: jeremywillans/rss-service:latest
+    #build: .
+    container_name: rss-service
+    environment:
+      # REPLACE BELOW WITH PREREQUISITE VARIABLES
+      TOKEN: XXXXX
+      FEED_ROOM_ID: XXXXX
+      RSS_FEED_URL: XXXXX
+      CONSOLE_LEVEL: info # Set Debug for detailed logging
+    restart: unless-stopped
+    networks:
+      - internal
+
+networks:
+  internal:
