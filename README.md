@@ -41,7 +41,7 @@ The simplest deployment method is using [Docker](https://docs.docker.com/engine/
 ### Environment Variables
 
 These variables can be individually defined in Docker, or loaded as an `.env` file in the `/app` directory.
-<!-- prettier-ignore-start -->
+
 | Name | Type | Default | Description
 | ---- | ---- | ------- | -----------
 | TOKEN | **Required** | ` ` | Bot Token for Webex Messaging Posts
@@ -62,7 +62,7 @@ These variables can be individually defined in Docker, or loaded as an `.env` fi
 | GLOBAL_AGENT_HTTP_PROXY | no | string | ` ` | Container HTTP Proxy Server (format `http://<ip or fqdn>:<port>`)
 | GLOBAL_AGENT_NO_PROXY | no | string | ` ` | Comma Separated List of excluded proxy domains (Supports wildcards)
 | NODE_EXTRA_CA_CERTS | no | string | ` ` | Include extra CA Cert bundle if required, (PEM format) ensure location is attached as a volume to the container
-<!-- prettier-ignore-end -->
+
 
 ## Support
 
