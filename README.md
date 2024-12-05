@@ -38,17 +38,16 @@ The simplest deployment method is using [Docker](https://docs.docker.com/engine/
 4. Provision and start the service using `docker-compose up -d`
 5. Review the console logs using `docker logs rss-service -f` (assuming you are using the default container name)
 
-### Environmental Variables
+### Environment Variables
 
 These variables can be individually defined in Docker, or loaded as an `.env` file in the `/app` directory.
 
-| Name         | Type         | Default | Description                         |
-| ------------ | ------------ | ------- | ----------------------------------- |
-| TOKEN        | **Required** | ` `     | Bot Token for Webex Messaging Posts |
-| FEED_ROOM_ID | **Required** | ` `     | RoomId for Webex Announcement Space |
-| RSS_FEED_URL | **Required** | ` `     | Rss Feed URL to get the feeds       |
-| RSS_INTERVAL | Optional     | `5`     | Interval for RSS Checks (Seconds)   |
-
+| Name | Type | Default | Description
+| ---- | ---- | ------- | -----------
+| TOKEN | **Required** | ` ` | Bot Token for Webex Messaging Posts
+| FEED_ROOM_ID | **Required** | ` ` | RoomId for Webex Announcement Space
+| RSS_FEED_URL | **Required** | ` ` | Rss Feed URL to get the feeds 
+| RSS_INTERVAL | Optional | `5` | Interval for RSS Checks (Seconds)
 | **Logging Settings**
 | CONSOLE_LEVEL | no | bool | `info` | Logging level exposed to console
 | APP_NAME | no | string | `rss-service` | App Name used for logging service
@@ -63,6 +62,7 @@ These variables can be individually defined in Docker, or loaded as an `.env` fi
 | GLOBAL_AGENT_HTTP_PROXY | no | string | ` ` | Container HTTP Proxy Server (format `http://<ip or fqdn>:<port>`)
 | GLOBAL_AGENT_NO_PROXY | no | string | ` ` | Comma Separated List of excluded proxy domains (Supports wildcards)
 | NODE_EXTRA_CA_CERTS | no | string | ` ` | Include extra CA Cert bundle if required, (PEM format) ensure location is attached as a volume to the container
+
 
 ## Support
 
