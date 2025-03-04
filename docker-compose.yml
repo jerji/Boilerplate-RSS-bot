@@ -9,7 +9,7 @@ services:
       # REPLACE BELOW WITH PREREQUISITE VARIABLES
       TOKEN: XXXXX
       FEED_ROOM_ID: XXXXX
-      RSS_FEED_URL: XXXXX
+      RSS_FEED_URLS: XXXXX
       CONSOLE_LEVEL: info # Set Debug for detailed logging
     restart: unless-stopped
     networks:

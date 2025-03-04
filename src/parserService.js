@@ -6,7 +6,7 @@ const httpService = require('./httpService');
 const env = cleanEnv(process.env, {
   TOKEN: str(),
   FEED_ROOM_ID: str(),
-  RSS_FEED_URL: str(),
+  RSS_FEED_URLS: str(),
 });
 
 function parserService() {
