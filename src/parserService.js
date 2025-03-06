@@ -20,13 +20,11 @@ function parserService() {
   }
 
   async function getBot() {
-    const bot = await httpService.getField(env.TOKEN, 'people/me');
-    return bot;
+    return await httpService.getField(env.TOKEN, 'people/me');
   }
 
   async function getRoom(roomId) {
-    const room = await httpService.getField(env.TOKEN, `rooms/${roomId}`);
-    return room;
+    return await httpService.getField(env.TOKEN, `rooms/${roomId}`);
   }
 
   async function parseFeed(item) {
