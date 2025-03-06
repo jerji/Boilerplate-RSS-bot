@@ -36,7 +36,7 @@ function parserService() {
     output.link = item.link;
 
     //message that the bot will send to space
-    let html = `<h4><a href="${output.link}">${output.title}</a></h4><p>${output.description}<p>`;
+    let html = `<h3><a href="${output.link}">${output.title}</a></h3><p>${output.description}<p>`;
     if (html.length > 7439){
       logger.info('Message too long. Trimming.');
       html = html.substring(0, 7420) + '...(truncated)<p>';
