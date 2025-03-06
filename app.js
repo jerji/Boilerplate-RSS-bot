@@ -83,8 +83,17 @@ async function init() {
 init();
 
 // Handle Graceful Shutdown (CTRL+C)
-process.on('SIGINT', () => {
+process.on('SIGINT', async () => {
   logger.debug('Stopping...');
+
+  try {
+    // Send shutdown message
+    await httpService.postMessage(env.TOKEN, env.FEED_ROOM_ID, "BeanRSS is shutting down.");
+    logger.debug('Shutdown message sent.');
+  } catch (error) {
+    logger.error("Error sending shutdown message:", error);
+  }
+
   feedWatchers.forEach(watcher => watcher.stop());
   logger.debug('Feeds Stopped.');
   process.exit(0);
