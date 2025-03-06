@@ -27,6 +27,7 @@ const env = cleanEnv(process.env, {
 });
 
 const parserService = require('./src/parserService');
+const httpService = require('./src/httpService');
 
 // Load RSS Watcher Instances
 const interval = env.RSS_INTERVAL;
@@ -72,6 +73,9 @@ async function init() {
 
   feedWatchers.forEach(watcher => watcher.start());
   logger.info('Startup Complete!');
+  let feed_list = '';
+  env.RSS_FEED_URLS.forEach(feedUrl => {feed_list += '<li>' +feedUrl + '</li> \n';});
+  await httpService.postMessage(env.TOKEN, env.FEED_ROOM_ID, `BeanRSS Started with ${feedWatchers.length} watchers, monitoring the following links: \n <ul>${feed_list}</ul>`);
 }
 
 // Initiate
