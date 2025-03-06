@@ -75,7 +75,8 @@ async function init() {
   logger.info('Startup Complete!');
   let feed_list = '';
   env.RSS_FEED_URLS.forEach(feedUrl => {feed_list += '<li>' +feedUrl + '</li> \n';});
-  await httpService.postMessage(env.TOKEN, env.FEED_ROOM_ID, `BeanRSS Started with ${feedWatchers.length} watchers, monitoring the following links: \n <ul>${feed_list}</ul>`);
+  const bot = await parserService.getBot()
+  await httpService.postMessage(env.TOKEN, env.FEED_ROOM_ID, `${bot.displayName} Started with ${feedWatchers.length} watchers, monitoring the following links: \n <ul>${feed_list}</ul>`);
 }
 
 // Initiate
