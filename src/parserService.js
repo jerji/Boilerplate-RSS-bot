@@ -19,7 +19,7 @@ function parserService() {
       formatted = formatted.replace(/ --<\/strong>/g, '</strong>');
       return formatted;
     }
-    return description;
+    return 'No description.';
   }
 
   async function getBot() {
