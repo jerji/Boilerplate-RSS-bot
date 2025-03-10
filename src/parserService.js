@@ -12,11 +12,14 @@ const env = cleanEnv(process.env, {
 function parserService() {
   function formatDescription(description) {
     // Implement custom formatting to description field
-    let formatted = description;
-    formatted = formatted.replace(/\r?\n|\r/g, '<br />');
-    formatted = formatted.replace(/<strong>-- /g, '<strong>');
-    formatted = formatted.replace(/ --<\/strong>/g, '</strong>');
-    return formatted;
+    if(description) {
+      let formatted = description;
+      formatted = formatted.replace(/\r?\n|\r/g, '<br />');
+      formatted = formatted.replace(/<strong>-- /g, '<strong>');
+      formatted = formatted.replace(/ --<\/strong>/g, '</strong>');
+      return formatted;
+    }
+    return description;
   }
 
   async function getBot() {
