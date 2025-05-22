@@ -39,10 +39,13 @@ function parserService() {
     output.link = item.link;
 
     //message that the bot will send to space
-    let html = `<h3><a href="${output.link}">${output.title}</a></h3><p>${output.description}<p>`;
-    if (html.length > 7439){
+    let html = `<h6>From: <a href="${item.meta.link}">${item.meta.title}</a></h6><h3><a href="${output.link}">${output.title}</a></h3><p>${output.description}<p><hr/>`;
+    const max_lenght = 7439;
+    const message = "...(truncated)</p><hr/>";
+
+    if (html.length > max_lenght) {
       logger.info('Message too long. Trimming.');
-      html = html.substring(0, 7420) + '...(truncated)<p>';
+      html = html.substring(0, max_lenght - message.length) + message;
     }
     await httpService.postMessage(env.TOKEN, env.FEED_ROOM_ID, html);
     const jsonOutput = JSON.stringify(output);
